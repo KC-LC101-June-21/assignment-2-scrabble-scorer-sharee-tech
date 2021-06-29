@@ -60,7 +60,7 @@ let scrabbleScore = function(word) {
 	for (let i = 0; i < word.length; i++) {
     for (let key in newPointStructure) {
       if(key === word[i]){
-        cumulativePoints += Number(newPointStructure[key]);
+        cumulativePoints += newPointStructure[key];
       }
     }
   }
@@ -104,7 +104,7 @@ function transform(ops) {
   for (item in ops) {
     for (let i = 0; i < ops[item].length; i++) {
       key = ops[item][i].toLowerCase(); 
-      newPointStructure[key] = item;
+      newPointStructure[key] = Number(item);
     }   
   }
   return newPointStructure;
